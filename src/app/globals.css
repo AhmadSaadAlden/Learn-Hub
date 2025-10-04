@@ -1,26 +1,231 @@
 @import "tailwindcss";
 
+/* light mode */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navbar-height: 70px;   /* ارتفاع الـ Navbar */
+  --path-height: 60px;     /* ارتفاع الـ ItemPath */
+  --header-total: 132px;   /* المجموع */ /* bg color */ /* text color */
+  --page-padding: 70px; /* مسافة جانبية */
+
+  --background: #ffffff; /* bg color */
+  --foreground: #000000; /* text color */
+  --text-white: #ffffff;
+  --text-black: #000000;
+  --font-exo: "Exo", sans-serif;
+  --font-jost: "Jost", sans-serif;
+  --primary-text-hover: #ff782D;
+  --icon-color: var(--text-black);
+  --label-input: #858484;
+  --btn: #ff782D;
+  --label-forget-light: #474747;
+  --label-forget-dark: #767474;
+  --link: #ff782D;
+  --bg-layout-light: var(--background);
+  --bg-layout-dark: #4a4a4a;
+  --para: #555555;
+  --second-btn: #9D9D9D;
+  --border-card: #EAEAEA;
+  --section-bg: #f5f5f5;
+  --section-text: var(--foreground);
+  --section-para: var(--para);
+  --section-text-btn: var(--foreground);
+  --section-border-btn: var(--second-btn);
+  --section-card-border: var(--border-card);
+  --section-card-title: var(--foreground);
+  --section-card-description: var(--para);
+  --icon: var(--btn);
+  --free: #55BE24;
+
+  /* shared */
+  --text-btn: #ffffff;
+  --bg-btn: #2580D5;
+
+  /* navbar */
+  --text-hover-item: #ff782D;
+  --bg-hover-item: #f5f5f5;
+  --text-active-item: var(--text-hover-item);
+  --bg-active-item: var(--bg-hover-item);
+
+  /*header2 (path)*/
+  --bg-header: #f5f5f5;
+  --text-header: #555555;
+  --icon-header: #9D9D9D;
+  
+  /*footer*/
+  --bg-footer: var(--bg-header);
+  --text-footer: var(--text-header);
+  --second-text-footer: var(--text-black);
+
+  /* auth */
+  --bg-layout-auth: var(--bg-layout-light);
+  --bg-auth: var(--bg-header);
+  --text-title-auth: var(--foreground);
+  --label-input-auth: var(--foreground);
+  --btn-auth: var(--btn);
+  --label-forget-auth: var(--label-forget-light);
+  --link-auth: var(--link);
+
+  /* Hero */
+  --hero-title: var(--foreground);
+  --hero-para: var(--para);
+  --hero-btn: var(--background);
+
+/* TopCategories*/
+  --TopCategories-bg: var(--section-bg);
+  --TopCategories-title: var(--foreground);
+  --TopCategories-para: var(--section-para);
+  --TopCategories-border-btn: var(--section-border-btn);
+  --TopCategories-btn: var(--section-text-btn);
+  --TopCategories-border-card: var(--section-card-border);
+  --TopCategories-title-card: var(--section-card-title);
+  --TopCategories-para-card: var(--section-card-description);
+
+  /* FeaturedCourses*/
+  --FeaturedCourses-bg: var(--section-bg);
+  --FeaturedCourses-title: var(--foreground);
+  --FeaturedCourses-para: var(--section-para);
+  --FeaturedCourses-border-btn: var(--section-border-btn);
+  --FeaturedCourses-btn: var(--section-text-btn);
+  --FeaturedCourses-border-card: var(--section-card-border);
+  --FeaturedCourses-title-card: var(--section-card-title);
+  --FeaturedCourses-para-card: var(--section-card-description);
+  --FeaturedCourses-icon: var(--icon);
+  --FeaturedCourses-viweMore: var(--text-black);
+  --FeaturedCourses-free: var(--free);
+  --FeaturedCourses-free: var(--second-btn);
+
+  /* AddOns */
+  --AddOns-para: var(--para);
+  --AddOns-title: var(--text-black);
+  --AddOns-description: var(--para);
+  --AddOns-btn: var(--text-white);
+  --AddOns-btn-bg: var(--btn);
+
+  /* OurStatistics */
+  --OurStatistics-bg: #f2f2f2;
+  --OurStatistics-number: var(--btn);
+  --OurStatistics-title: #000000;
+
+
+  /* skills */
+  --skills-title: var(--text-black);
+  --skills-description: var(--para);
+  --skills-list: var(--text-black);
+
+  /* courses */
+  --courses-title: var(--foreground);
+  --course-search: var(--text-black);
+  --courses-icon: var(--foreground);
+  --courses-pagintion-title: var(--para);
+  --courses-pagintion-title-hover: var(--foreground);
+  --courses-pagintion-icon: var(--foreground);
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+/* dark mode */
+.dark {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --text-white: #000000;
+  --text-black: #ffffff;
+  --icon-color: #c1c1c1;
+  --section-bg: #3d3d3d;
+  --section-text: var(--text-black);
+  --section-para: #cccccc;
+  --section-text-btn: var(--foreground);
+  --section-border-btn: var(--second-btn);
+  --section-card-border: var(--section-para);
+  --section-card-title: var(--foreground);
+  --section-card-description: var(--section-para);
+
+   /* navbar */
+  --text-hover-item: #ff782D;
+  --bg-hover-item: #2d2d2d;
+  --text-active-item: var(--text-hover-item);
+  --bg-active-item: var(--bg-hover-item);
+
+    /*header2 (path)*/
+  --bg-header: #2d2d2d;
+  --text-header: #cccccc;
+  --icon-header: #9D9D9D;
+
+  /*footer*/
+  --bg-footer: var(--background);
+  --text-footer: var(--text-header);
+  --second-text-footer: var(--text-black);
+
+  /* auth */
+  --bg-layout-auth: var(--bg-layout-dark); 
+  --bg-auth: #414141;
+  --text-title: var(--text-header);
+  --label-input-auth: var(--label-input);
+  --btn-auth: var(--btn);
+  --label-forget-auth: var(--label-forget-dark);
+  --link-auth: var(--link);
+
+  /* TopCategories*/
+  --TopCategories-bg: var(--section-bg);
+  --TopCategories-title: var(--foreground);
+  --TopCategories-para: var(--section-para);
+  --TopCategories-border-btn: var(--section-border-btn);
+  --TopCategories-btn: var(--section-text-btn);
+  --TopCategories-border-card: var(--section-card-border);
+  --TopCategories-title-card: var(--section-card-title);
+  --TopCategories-para-card: var(--section-card-description);
+
+  /* FeaturedCourses*/
+  --FeaturedCourses-bg: var(--section-bg);
+  --FeaturedCourses-title: var(--foreground);
+  --FeaturedCourses-para: var(--section-para);
+  --FeaturedCourses-border-btn: var(--section-border-btn);
+  --FeaturedCourses-btn: var(--section-text-btn);
+  --FeaturedCourses-border-card: var(--section-card-border);
+  --FeaturedCourses-title-card: var(--section-card-title);
+  --FeaturedCourses-para-card: var(--section-card-description);
+  --FeaturedCourses-icon: var(--icon);
+  --FeaturedCourses-free: var(--free);
+  --FeaturedCourses-del: var(--second-btn);
+
+  /* AddOns */
+  --AddOns-para: var(--para);
+  --AddOns-description: var(--para);
+  --AddOns-btn-bg: var(--btn);
+
+  /* OurStatistics */
+  --OurStatistics-bg: #f2f2f2;
+  --OurStatistics-number: var(--btn);
+  --OurStatistics-title: #000000;
+
+  /* skills */
+  --skills-title: var(--text-black);
+  --skills-description: var(--para);
+  --skills-list: var(--text-black);
+  
+  /* courses */
+  --courses-title: var(--foreground);
+  --course-search: var(--second-btn);
+  --courses-icon: var(--foreground);
+  --courses-pagintion-title: var(--foreground);
+  --courses-pagintion-hover: var(--foreground);
+  --courses-pagintion-icon: var(--foreground);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+ /* default */
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-exo);
+}
+
+ /* class */
+@layer components{
+  .exo {
+  font-family: var(--font-exo);
+  }
+
+  .jost {
+    font-family: var(--font-jost);
+  }
+
+  .footer{
+    padding: 50px 70px;
+  }
+
 }
