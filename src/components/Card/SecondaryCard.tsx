@@ -1,18 +1,28 @@
 'use client'
+import { useTranslation } from "@/lib/i18n/useTranslation"
 import Image, { StaticImageData } from "next/image"
 import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { FaClock, FaGraduationCap} from "react-icons/fa"
 
 interface FeaturedCoursesCardType {
+    id: string
     img: string | StaticImageData
     imgTitle: string
     title: string
     description: string
-    time: string
-    study: string
+    time: number
+    study: number
     price: string
     free: string
     viewMore: string
+    level?: string
+    lessons?: number
+    quizzes?: number
+    sale?: string
+    btn?: string
+    times?: string
+    student?: string
 }
 
 interface FeaturedCoursesCardProps {
@@ -20,9 +30,17 @@ interface FeaturedCoursesCardProps {
 }
 
 export const SecondaryCard = ({card}: FeaturedCoursesCardProps) => {
+    const router = useRouter()
+    const handleCardClick = () => {
+        router.push(`/courses/${card.id}`)
+    }
+
     return (
-        <div className="w-full sm:max-w-[385px] h-[474px] rounded-[20px] flex flex-col items-center gap-9 cursor-pointer
-                    border border-[var(--FeaturedCourses-border-card)] shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300 ease-in-out">
+        <div 
+            onClick={handleCardClick}
+            className="w-full sm:max-w-[385px] h-[474px] rounded-[20px] flex flex-col items-center gap-9 cursor-pointer
+                    border border-[var(--FeaturedCourses-border-card)] shadow-sm hover:shadow-md hover:-translate-y-2 transition-all duration-300 ease-in-out"
+        >
             {card.img && (
                 <div className="relative w-full h-[250px]">
                     <Image 
@@ -48,11 +66,11 @@ export const SecondaryCard = ({card}: FeaturedCoursesCardProps) => {
                 <div className="flex justify-between items-center text-sm md:text-base">
                     <span className="flex items-center justify-center gap-2 jost font-normal text-[var(--FeaturedCourses-para)]">
                         <FaClock className="text-[var(--FeaturedCourses-icon)]" />
-                        {card.time}
+                        {card.time} {card.times}
                     </span>
                     <span className="flex items-center justify-center gap-2 jost font-normal text-[var(--FeaturedCourses-para)]">
                         <FaGraduationCap className="text-[var(--FeaturedCourses-icon)]" />
-                        {card.study}
+                        {card.study} {card.student}
                     </span>
                 </div>
                 <hr className="border-gray-300"/>

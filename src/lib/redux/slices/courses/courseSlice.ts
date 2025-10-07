@@ -29,3 +29,4 @@ export const {setCurrentPage} = coursesSlice.actions
 export const selectAllCourses = (state: {courses: CoursesState }) => state.courses.courses
 export const selectCurrentPage = (state: {courses: CoursesState }) => state.courses.currentPage
 export const selectCoursesPerPage = (state: {courses: CoursesState }) => state.courses.coursesPerPage
+export const selectCourseById = (state: {courses: CoursesState }, courseId: string) => state.courses.courses.find(course => course.id.toString() === courseId)

@@ -35,10 +35,15 @@
   --section-card-description: var(--para);
   --icon: var(--btn);
   --free: #55BE24;
-
+  
   /* shared */
   --text-btn: #ffffff;
   --bg-btn: #2580D5;
+
+  /*courseTabs*/
+  --bg: #f5f5f5;
+  --text: #999999;
+  --border: #bcc3ca;
 
   /* navbar */
   --text-hover-item: #ff782D;
@@ -119,6 +124,17 @@
   --courses-pagintion-title: var(--para);
   --courses-pagintion-title-hover: var(--foreground);
   --courses-pagintion-icon: var(--foreground);
+
+  /* courseTabs */
+  --courseTabs-bg: var(--bg);
+  --courseTabs-text: var(--text);
+  --courseTabs-border: var(--border);
+
+  /* courseForm */
+  --courseForm-text: var(--para);
+  --courseForm-placeholder: var(--second-btn);
+  --courseTabs-check: var(--para);
+  
 }
 
 /* dark mode */
@@ -136,6 +152,10 @@
   --section-card-border: var(--section-para);
   --section-card-title: var(--foreground);
   --section-card-description: var(--section-para);
+  /*courseTabs*/
+  --bg: #f9f9f9;
+  --text: #cccccc;
+  --border: #bcc3ca;
 
    /* navbar */
   --text-hover-item: #ff782D;
@@ -207,6 +227,16 @@
   --courses-pagintion-title: var(--foreground);
   --courses-pagintion-hover: var(--foreground);
   --courses-pagintion-icon: var(--foreground);
+
+  /* courseTabs */
+  --courseTabs-bg: var(--bg);
+  --courseTabs-Text: var(--text);
+  --courseTabs-border: var(--border);
+
+  /* courseForm */
+  --courseForm-text: var(--section-para);
+  --courseForm-placeholder: var(--text);
+  --courseTabs-check: var(--section-para);
 }
 
  /* default */

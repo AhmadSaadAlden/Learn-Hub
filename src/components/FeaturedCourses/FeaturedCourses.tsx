@@ -2,10 +2,18 @@
 import { useTranslation } from "@/lib/i18n/useTranslation"
 import GlobalHeading from "@/shared/GlobalHeading/GlobalHeading"
 import { SecondaryCard } from "../Card/SecondaryCard"
+import { useAppSelector } from "@/lib/redux/store/hook"
+import { selectAllCourses } from "@/lib/redux/slices/courses/courseSlice"
+import { combineCourseData } from "@/lib/redux/slices/courses/courseUtils"
 
 export const FeaturedCourses = () => {
     const {t} = useTranslation()
-
+    const allCourses = useAppSelector(selectAllCourses)
+    const featuresCourses = allCourses.slice(0,3)
+    const combinedCourses = featuresCourses.map(course => {
+        const translatedData = t.courses[course.id as keyof typeof t.courses]
+        return combineCourseData(course, translatedData)
+    })
     return (
         <div className="mt-[70px] px-[70px] bg-[var(--FeaturedCourses-bg)]  w-full space-y-[50px]">
             <div>
@@ -17,7 +25,7 @@ export const FeaturedCourses = () => {
                 />
             </div>
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 justify-items-center'>
-                {t.FeaturedCoursesCardData.map((item: any, index: number)=> (
+                {combinedCourses.map((item: any, index: number)=> (
                     <SecondaryCard key={index} card={item}/>
                 ))}
             </div>
